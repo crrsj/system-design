@@ -50,10 +50,13 @@ jobs:
           distribution: temurin
           java-version: 21
           cache: maven
+          cache-dependency-path: backend/pom.xml
 
       - name: Executar testes e gerar pacote
+        working-directory: backend
         env:
-          SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/products_db
+          SPRING_DATASOURCE_MASTER_URL: jdbc:postgresql://localhost:5432/products_db
+          SPRING_DATASOURCE_SLAVE_URL: jdbc:postgresql://localhost:5432/products_db
           SPRING_DATASOURCE_USERNAME: postgres
           SPRING_DATASOURCE_PASSWORD: password
           SPRING_DATA_REDIS_HOST: localhost
@@ -61,4 +64,4 @@ jobs:
         run: mvn clean verify
 
       - name: Construir imagem Docker
-        run: docker build -t backend-api .
+        run: docker build -t backend-api ./backend
