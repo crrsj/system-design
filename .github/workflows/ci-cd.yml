@@ -55,12 +55,17 @@ jobs:
       - name: Executar testes e gerar pacote
         working-directory: backend
         env:
-          SPRING_DATASOURCE_MASTER_URL: jdbc:postgresql://localhost:5432/products_db
-          SPRING_DATASOURCE_SLAVE_URL: jdbc:postgresql://localhost:5432/products_db
-          SPRING_DATASOURCE_USERNAME: postgres
-          SPRING_DATASOURCE_PASSWORD: password
+          SPRING_DATASOURCE_MASTER_JDBCURL: jdbc:postgresql://localhost:5432/products_db
+          SPRING_DATASOURCE_MASTER_USERNAME: postgres
+          SPRING_DATASOURCE_MASTER_PASSWORD: password
+
+          SPRING_DATASOURCE_REPLICA_JDBCURL: jdbc:postgresql://localhost:5432/products_db
+          SPRING_DATASOURCE_REPLICA_USERNAME: postgres
+          SPRING_DATASOURCE_REPLICA_PASSWORD: password
+
           SPRING_DATA_REDIS_HOST: localhost
           SPRING_DATA_REDIS_PORT: 6379
+
         run: mvn clean verify
 
       - name: Construir imagem Docker
