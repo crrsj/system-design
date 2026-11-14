@@ -46,9 +46,9 @@ jobs:
           java-version: '21'
           cache: 'maven'
 
-      - name: Executar Compilação Maven (Sem Testes)
+      - name: Compilar e Empacotar (Ignorando Testes)
         working-directory: ./backend
-        run: mvn clean package -DskipTests
+        run: mvn clean package -Dmaven.test.skip=true
 
       - name: Construir Imagem Docker da API
         working-directory: ./backend
