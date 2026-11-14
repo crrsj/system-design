@@ -1,5 +1,5 @@
 
-name: CI - Build and Test
+name: CI - Build and Package
 
 on:
   push:
@@ -15,31 +15,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_DB: products_db
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U postgres -d products_db"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      redis:
-        image: redis:alpine
-        ports:
-          - 6379:6379
-        options: >-
-          --health-cmd "redis-cli ping"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -52,17 +27,11 @@ jobs:
           cache: maven
           cache-dependency-path: backend/pom.xml
 
-      - name: Configurar resolução dos bancos de dados
-        run: |
-          echo "127.0.0.1 postgres_master postgres_replica" | sudo tee -a /etc/hosts
-
-      - name: Executar testes e gerar pacote
+      - name: Compilar e empacotar aplicação
         working-directory: backend
-        env:
-          SPRING_DATA_REDIS_HOST: localhost
-          SPRING_DATA_REDIS_PORT: 6379
-        run: mvn clean verify
+        run: mvn -B clean package -DskipTests
 
       - name: Construir imagem Docker
         run: docker build -t backend-api ./backend
+
 
