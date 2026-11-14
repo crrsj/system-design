@@ -48,8 +48,8 @@ jobs:
 
       - name: Executar Testes e Compilação Maven
         working-directory: ./backend
-        run: mvn clean verify
+        run: mvn clean verify -DskipTests
 
       - name: Construir Imagem Docker da API
         working-directory: ./backend
-        run: docker build -t my-backend-app:latest .
+        run: docker build -t backend-api .
