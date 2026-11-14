@@ -21,7 +21,7 @@ jobs:
         env:
           POSTGRES_DB: products_db
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
         options: >-
@@ -52,21 +52,17 @@ jobs:
           cache: maven
           cache-dependency-path: backend/pom.xml
 
+      - name: Configurar resolução dos bancos de dados
+        run: |
+          echo "127.0.0.1 postgres_master postgres_replica" | sudo tee -a /etc/hosts
+
       - name: Executar testes e gerar pacote
         working-directory: backend
         env:
-          SPRING_DATASOURCE_MASTER_JDBCURL: jdbc:postgresql://localhost:5432/products_db
-          SPRING_DATASOURCE_MASTER_USERNAME: postgres
-          SPRING_DATASOURCE_MASTER_PASSWORD: password
-
-          SPRING_DATASOURCE_REPLICA_JDBCURL: jdbc:postgresql://localhost:5432/products_db
-          SPRING_DATASOURCE_REPLICA_USERNAME: postgres
-          SPRING_DATASOURCE_REPLICA_PASSWORD: password
-
           SPRING_DATA_REDIS_HOST: localhost
           SPRING_DATA_REDIS_PORT: 6379
-
         run: mvn clean verify
 
       - name: Construir imagem Docker
         run: docker build -t backend-api ./backend
+
