@@ -1,0 +1,121 @@
+version: '3.8'
+
+services:
+  postgres_master:
+    image: postgres:15-alpine
+    container_name: postgres_master
+    environment:
+      POSTGRES_DB: products_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata_master:/var/lib/postgresql/data
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d products_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  postgres_replica:
+    image: postgres:15-alpine
+    container_name: postgres_replica
+    environment:
+      POSTGRES_DB: products_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata_replica:/var/lib/postgresql/data
+    networks:
+      - app-network
+    depends_on:
+      postgres_master:
+        condition: service_healthy
+
+  redis:
+    image: redis:alpine
+    container_name: redis_cache
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+
+  api-1:
+    build: ./backend
+    container_name: api-1
+    environment:
+      - SPRING_DATASOURCE_MASTER_URL=jdbc:postgresql://postgres_master:5432/products_db
+      - SPRING_DATASOURCE_SLAVE_URL=jdbc:postgresql://postgres_replica:5432/products_db
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
+    expose:
+      - "8080"
+    networks:
+      - app-network
+    depends_on:
+      postgres_master:
+        condition: service_healthy
+      postgres_replica:
+        condition: service_started
+      redis:
+        condition: service_started
+
+  api-2:
+    build: ./backend
+    container_name: api-2
+    environment:
+      - SPRING_DATASOURCE_MASTER_URL=jdbc:postgresql://postgres_master:5432/products_db
+      - SPRING_DATASOURCE_SLAVE_URL=jdbc:postgresql://postgres_replica:5432/products_db
+      - SPRING_DATA_REDIS_HOST=redis
+      - SPRING_DATA_REDIS_PORT=6379
+    expose:
+      - "8080"
+    networks:
+      - app-network
+    depends_on:
+      postgres_master:
+        condition: service_healthy
+      postgres_replica:
+        condition: service_started
+      redis:
+        condition: service_started
+
+  load_balancer:
+    image: nginx:alpine
+    container_name: load_balancer
+    ports:
+      - "80:80"
+    volumes:
+      - ./conf:/etc/nginx/conf.d:ro
+    networks:
+      - app-network
+    depends_on:
+      - api-1
+      - api-2
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_manager
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - app-network
+    depends_on:
+      - postgres_master
+      - postgres_replica
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata_master:
+  pgdata_replica:

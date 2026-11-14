@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bb88aae-8c13-4dd8-966e-a94fac4790e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Deposito/Deposito-front/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/controller/ClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/controller/ProdutoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/dto/ClienteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/dto/MensagemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/dto/ProdutoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/dto/StatusDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/dto/ValidandoCampos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/entity/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/entity/Produto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/enums/Marca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/enums/StatusEntrega.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/enums/StatusPagamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/enums/TipoProduto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/enums/Uf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/excessoes/ClienteNaoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/excessoes/ExcessoesGlobais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/excessoes/ProdutoNaoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/repository/ClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/repository/ProdutoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/service/ClienteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Deposito/src/main/java/br/com/deposito/service/ProdutoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Turismo/src/main/java/br/com/turismo/enums/Origem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/br/com/app/repository/ClienteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../appSaude/saude/src/main/java/br/com/saude/entity/Medicamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../produtos/src/main/java/br/com/produto/dto/PedidoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../API_GUTENDEX" beforeDir="false" afterPath="$PROJECT_DIR$/../API_GUTENDEX" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Exercicio" beforeDir="false" afterPath="$PROJECT_DIR$/../Exercicio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Farmacia_Popular" beforeDir="false" afterPath="$PROJECT_DIR$/../Farmacia_Popular" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../analise-de-vendas" beforeDir="false" afterPath="$PROJECT_DIR$/../analise-de-vendas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exedto" beforeDir="false" afterPath="$PROJECT_DIR$/../exedto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoProjeto/src/main/java/br/com/projeto/controller/PontoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../novoProjeto/src/main/java/br/com/projeto/controller/PontoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../novoProjeto/src/main/java/br/com/projeto/dto/CriarPontoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../novoProjeto/src/main/java/br/com/projeto/dto/CriarPontoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/../tutorial" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Docker Compose" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;crrsj&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/crrsj/spring-data-repositores.git&quot;,
+    &quot;accountId&quot;: &quot;b4008b38-6c81-433a-aa6e-3bde274ce4b2&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000465777346486" />
+      <entry key="MS500" value="1.1360368073480418" />
+      <entry key="S2" value="1.7418474981471688" />
+      <entry key="S5" value="3.6072656179587006" />
+      <entry key="S10" value="8.575908317195221" />
+      <entry key="S30" value="29.35784593983542" />
+      <entry key="S60" value="49.562852113348214" />
+      <entry key="M2" value="75.63128894880576" />
+      <entry key="M5" value="120.27028965272315" />
+      <entry key="M10" value="159.34742097291323" />
+      <entry key="M15" value="189.50592828722867" />
+      <entry key="M30" value="285.9408358081743" />
+      <entry key="H1" value="511.54578407084233" />
+      <entry key="H2" value="878.3696045327268" />
+      <entry key="H4" value="1253.6238385912468" />
+      <entry key="D1" value="1762.817764905709" />
+      <entry key="W1" value="1876.2021678255408" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9794202975871154" />
+      <entry key="MS500" value="0.9987078445216411" />
+      <entry key="S2" value="1.3644146800738683" />
+      <entry key="S5" value="3.3433920215653243" />
+      <entry key="S10" value="8.415045576829275" />
+      <entry key="S30" value="29.29513161165512" />
+      <entry key="S60" value="49.52908285434167" />
+      <entry key="M2" value="75.61204739679091" />
+      <entry key="M5" value="120.26035883732871" />
+      <entry key="M10" value="159.34135606125702" />
+      <entry key="M15" value="189.5013275065978" />
+      <entry key="M30" value="285.9376708237531" />
+      <entry key="H1" value="511.54315280698717" />
+      <entry key="H2" value="878.3674046292123" />
+      <entry key="H4" value="1253.6222784450456" />
+      <entry key="D1" value="1762.817399796537" />
+      <entry key="W1" value="1876.2021123094974" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3M69kkaYrFRsgEW3kZb1Pk2ZaQL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Documents/projetos/System Design&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\projetos\System Design" />
+      <recent name="C:\Users\User\Documents\projetos\System Design\nginx.conf" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2df11533d9fe-intellij.indexing.shared.core-IU-262.11879.100" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.11879.100" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bb88aae-8c13-4dd8-966e-a94fac4790e3" name="Changes" comment="" />
+      <created>1794660296281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794660296281</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+</project>
